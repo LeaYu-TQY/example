@@ -1,0 +1,26 @@
+There are two lists of dictionaries representing friendship beginnings and endings: 
+friends_added and friends_removed. Each dictionary contains the user_ids and created_at time of the friendship beginning /ending.
+
+Write a function friendship_timeline to generate an output that lists the pairs of friends with their corresponding timestamps of the friendship beginning and then the timestamp of the friendship ending.
+
+Note: There can be multiple instances over time when two people became friends and unfriended; only output lists when a corresponding friendship was removed.
+
+
+friends_added:
+user_ids	created_at
+[1,2]	"2020-01-01"
+[2,3]	"2020-01-02"
+[3,4]	"2020-02-02"
+[4,5]	"2020-02-02"
+
+friends_removed:
+user_ids	created_at
+[2,3]	"2020-01-03"
+[4,5]	"2020-03-05"
+[1,2]	"2020-02-05"
+
+expected output:
+user_ids	start_date	end_date
+[1,2]	"2020-01-01"	"2020-02-05"
+[2,3]	"2020-01-02"	"2020-01-03"
+[4,5]	"2020-02-02"	"2020-03-05"
